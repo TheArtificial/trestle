@@ -16,8 +16,7 @@
 			"extensions": [
 				"samuelcolvin.jinjahtml",
 				"fill-labs.dependi",
-				"kilocode.kilo-code",
-				"saoudrizwan.claude-dev" // Cline
+				"kilocode.kilo-code"
 			]
 		}
 	}
