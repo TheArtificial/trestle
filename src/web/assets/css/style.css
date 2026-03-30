@@ -52,6 +52,13 @@
     --border-color: #121212;
     --selected-color: #121212;
     --selected-text-color: #EEEEEE;
+
+    /* Empty / loading surfaces (maps, placeholders): two-tone tile, no border-radius */
+    --checker-background: repeating-conic-gradient(
+        var(--page-color) 0% 25%,
+        var(--border-color) 0% 50%
+    );
+    --checker-background-size: 12px;
 }
 
 html.theme-dark {

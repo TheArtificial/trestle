@@ -7,3 +7,15 @@
  * - Use CSS variables from style.css: var(--spacing-unit), var(--page-color), etc.
  * - No rounded corners or gradients — keep the geometric look unless you change that rule.
  */
+
+/* -------------------
+   Design system page: checker “null” background demo (/docs/design-system)
+*/
+.ds-checker-null-demo {
+    height: 6rem;
+    width: 100%;
+    max-width: 28rem;
+    border: solid var(--thin-line-unit) var(--border-color);
+    background: var(--checker-background);
+    background-size: var(--checker-background-size) var(--checker-background-size);
+}

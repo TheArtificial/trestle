@@ -37,6 +37,7 @@ How to orient in **this project**: a Rust web **starter** (Axum, SQLx, MiniJinja
 | Local quickstart (`cargo run`, dev quirks) | [`docs/quickstart.md`](docs/quickstart.md) |
 | Deploy notes | [`docs/deploy.md`](docs/deploy.md) |
 | Frontend / templates | [`docs/frontend-development.md`](docs/frontend-development.md) |
+| Design system (web UI) | [`docs/design-system.md`](docs/design-system.md) |
 | MiniJinja template limits (vs full Jinja2) | [`docs/minijinja-template-limitations.md`](docs/minijinja-template-limitations.md) |
 
 ## Planning docs

@@ -119,11 +119,13 @@ src/web/templates/
 - [ ] Descriptive CSS comments
 - [ ] Semantic HTML
 
-## Design System
+## Design system
 
-### Visual Design
+See **[`design-system.md`](design-system.md)** for shared UI standards, checker tokens for empty surfaces (`--checker-background`), and the live page at **`/docs/design-system`**.
+
+### Visual design
 - **Geometric shapes** - clean, angular design
-- **Solid colors** - no gradients
+- **Solid colors** - no decorative gradients (checker null surfaces use the tokenized pattern in `style.css`)
 - **Consistent spacing** - use `var(--spacing-unit)`
 - **Monospace data** - use `--data-font-family` for technical info
 
@@ -153,8 +155,8 @@ src/web/templates/
 ### Form Layouts
 Use the `.fields-grid` class system from `common.css`
 
-### Admin Interface
-Follow existing admin template patterns in `src/web/templates/admin/`
+### Admin and other feature areas
+Follow the same design system; reuse patterns under `src/web/templates/` (e.g. `admin/`) consistently.
 
 ---
 

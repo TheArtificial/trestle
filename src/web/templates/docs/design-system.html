@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Design System{% endblock %}
+{% block breadcrumb %}<a href="/">Home</a> &gt; {% endblock %}
+
+{% block content %}
+{% set principles = [
+  "Keep the brutalist baseline: hard edges, strong borders, no decorative gradients, no rounded corners (the checker pattern is the standard treatment for empty surfaces).",
+  "Use design tokens from `style.css` for color, spacing, typography, and state.",
+  "Prefer existing utility and component classes before adding new selectors.",
+  "Keep logic in Rust handlers; templates should be structure and presentation only.",
+  "Never use inline styles in templates."
+] %}
+{% set do_items = [
+  "Use `var(--spacing-unit)` and `var(--thin-line-unit)` for rhythm and stroke consistency.",
+  "Use `.box`, `.fields-grid`, `.button-row`, and button classes for repeatable UI structure.",
+  "Use uppercase labels for controls and metadata, with readable body text for content.",
+  "Keep interactions simple and explicit: hover and active states should use existing variables."
+] %}
+{% set dont_items = [
+  "Do not add inline `<style>` blocks for feature-specific layout tweaks.",
+  "Do not introduce one-off color literals when equivalent tokens exist.",
+  "Do not use rounded cards, soft shadows, or decorative gradients.",
+  "Do not add frontend framework patterns that fight the server-rendered approach."
+] %}
+
+<h3>Design system</h3>
+<p>
+  Visual and component conventions for the whole web UI (public and authenticated areas).
+  This page doubles as a template and CSS reference.
+</p>
+
+<div class="box full-width">
+  <h3>Core principles</h3>
+  <ol>
+    {% for principle in principles %}
+    <li>{{ principle }}</li>
+    {% endfor %}
+  </ol>
+</div>
+
+<div class="box full-width">
+  <h3>Design tokens</h3>
+  <dl class="fields-grid">
+    <dt>Spacing</dt>
+    <dd><code>--spacing-unit</code>, <code>--thin-line-unit</code></dd>
+    <dt>Colors</dt>
+    <dd><code>--page-color</code>, <code>--text-color</code>, <code>--border-color</code>, <code>--accent-color</code></dd>
+    <dt>States</dt>
+    <dd><code>--selected-color</code>, <code>--selected-text-color</code>, <code>--error-color</code>, <code>--warning-color</code>, <code>--success-color</code></dd>
+    <dt>Type</dt>
+    <dd><code>--body-font-family</code>, <code>--logo-font-family</code>, <code>--data-font-family</code></dd>
+    <dt>Null surfaces</dt>
+    <dd>
+      <code>--checker-background</code> and <code>--checker-background-size</code> — two-tone tile for
+      unfilled or not-yet-loaded regions. Use both together:
+      <code>background: var(--checker-background)</code> and
+      <code>background-size: var(--checker-background-size)</code> (see <code>style.css</code>).
+    </dd>
+  </dl>
+  <p class="caption">
+    Tokens live in <code>src/web/assets/css/style.css</code>; demos in <code>specifics.css</code>.
+  </p>
+  <h4>Checker “null” background (example)</h4>
+  <p class="caption">
+    Same pattern as map-style panels when the drawable area has no solid fill yet.
+  </p>
+  <div class="ds-checker-null-demo" role="img" aria-label="Checker pattern for empty surfaces"></div>
+</div>
+
+<div class="box full-width">
+  <h3>Do / Don&#39;t</h3>
+  <section class="two-columns">
+    <div>
+      <h4>Do</h4>
+      <ul>
+        {% for item in do_items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h4>Don&#39;t</h4>
+      <ul>
+        {% for item in dont_items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="box full-width">
+  <h3>Component patterns</h3>
+  <h4>Buttons</h4>
+  <ul class="button-row">
+    <li><a href="#" class="button-link">Primary link</a></li>
+    <li><button type="button">Button</button></li>
+    <li><button type="button" class="button-borderless">Borderless</button></li>
+  </ul>
+
+  <h4>Definition / form grid</h4>
+  <dl class="fields-grid">
+    <dt>Example</dt>
+    <dd>Sample value</dd>
+    <dt>Visibility</dt>
+    <dd>Public</dd>
+    <dt>Status</dt>
+    <dd><span class="success">Healthy</span></dd>
+  </dl>
+
+  <h4>Status language</h4>
+  <p>
+    <span class="success">success</span> /
+    <span class="warning">warning</span> /
+    <span class="error">error</span>
+  </p>
+</div>
+
+<div class="box full-width">
+  <h3>Template &amp; CSS checklist</h3>
+  <ul>
+    <li>Remove inline style attributes and embedded style tags from templates.</li>
+    <li>Move repeated layout patterns into shared CSS classes.</li>
+    <li>Replace hardcoded color values with design tokens.</li>
+    <li>Use existing button, form, table, and box patterns first.</li>
+    <li>Keep MiniJinja usage simple; precompute data in Rust handlers.</li>
+  </ul>
+</div>
+{% endblock %}

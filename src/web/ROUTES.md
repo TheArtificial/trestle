@@ -18,6 +18,10 @@ Axum routes for the web server (`RUN_WEB=true`). Update this file when you add o
 
 - `GET /` — marketing home when logged out; logged-in users see `dashboard_empty.html` (or redirect to email verify if needed)
 
+## Public docs (`src/web/public.rs`)
+
+- `GET /docs/design-system` — design system reference page (TSR: optional trailing slash)
+
 ## Admin (`src/web/admin/mod.rs`)
 
 - `GET /admin/` — admin menu

@@ -21,6 +21,7 @@ Index of agent- and contributor-oriented docs for **this project**.
 | MiniJinja contexts | [`minijinja-context-patterns.md`](minijinja-context-patterns.md) |
 | MiniJinja vs Jinja2 | [`minijinja-template-limitations.md`](minijinja-template-limitations.md) |
 | Frontend (templates, CSS, JS) | [`frontend-development.md`](frontend-development.md) |
+| Design system (tokens, `/docs/design-system`) | [`design-system.md`](design-system.md) |
 
 ## Operations & deploy
 
