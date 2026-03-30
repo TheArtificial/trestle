@@ -13,4 +13,4 @@ See **[`docs/README.md`](README.md)** for the documentation index.
 | Shared domain | `src/core/` | Users, email, shared DB access; migrations in `migrations/` |
 | Config & entry | `src/config.rs`, `src/main.rs` | Service toggles, startup |
 
-The default schema is a **single migration** ([`migrations/20250309000000_trestle.up.sql`](../migrations/20250309000000_trestle.up.sql)): `users`, `invites`, `email_configs`, `email_messages`, and OAuth provider tables. Rust code is trimmed to **web UI + auth**, **admin (users, OAuth clients)**, and the **standalone API** (OAuth + `v1.0` user/profile routes).
+The default schema is applied by migrations under [`migrations/`](../migrations/): [`20250309000000_trestle.up.sql`](../migrations/20250309000000_trestle.up.sql) (`users`, `invites`, `email_configs`, `email_messages`, OAuth provider tables) and [`20250325000000_seed_admin_user.up.sql`](../migrations/20250325000000_seed_admin_user.up.sql) (bootstrap **admin** user; see [quickstart](quickstart.md) / [deploy](deploy.md)). Rust code is trimmed to **web UI + auth**, **admin (users, OAuth clients)**, and the **standalone API** (OAuth + `v1.0` user/profile routes).

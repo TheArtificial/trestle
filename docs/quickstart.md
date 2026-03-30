@@ -11,6 +11,8 @@
 
    (Use the same `DATABASE_URL` the app will use.)
 
+   After migrations, an **admin** user exists for the web UI password login: **username** `admin`, **password** `Never deploy with default passwords.` (email placeholder `admin@localhost`). Treat this as a development default—**change the password** (account settings or admin user tools) before any real deploy; see [deploy.md](deploy.md).
+
 3. Enable at least one service, for example **`RUN_WEB=true`** (and optionally `RUN_API`, `RUN_WORKERS`).
 4. Run:
 

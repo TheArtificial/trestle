@@ -11,6 +11,8 @@ Trestle expects a **working PostgreSQL service** you operate separately. The app
 1. Start Postgres (sidecar VM, compose service, managed DB, etc.).
 2. Create a database and **apply migrations** from [`migrations/`](../migrations/) (for example `sqlx migrate run` against that URL, or your platform's migration job).
 
+Migrations include a **seed admin** user (**username** `admin`, **password** `Never deploy with default passwords.`, email `admin@localhost`) so you can sign in after `RUN_WEB` is on. **Change this password immediately** in production (or create a new admin and remove the seed account). Never rely on default credentials on an internet-exposed stack.
+
 ## Typical runtime environment
 
 **Minimal variables** for a hello-world-style deploy are listed in **[`.env.example`](../.env.example)**. In short:
